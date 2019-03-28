@@ -11,7 +11,7 @@ public:
         for (int i=0; i<n; i++)
         {
             //a^a=0;  0^a=a;  a^b=b^a;
-            single ^=nums[i];   //如果这个数异或不到自己最后结果还是本身               
+            single ^=nums[i];   //把容器里的所有数取异或，如果这个数出现为奇数，结果就是这个数               
         }
         return single;  //返回没有重复的数
     }
