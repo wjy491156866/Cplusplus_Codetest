@@ -40,3 +40,27 @@ public:
     }
 };
 
+
+//方法二：递归法，因为是有序链表，直接把当前链表的第一个数比较，然后加入到新建的链表中。
+//因为是递归，时间复杂度和空间复杂度较高。
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {   
+        if (l1 == NULL) return l2;  //如果其中一个有序链表为空，则返回另一个链表。
+        if (l2 == NULL) return l1;
+        ListNode* p1 = l1, * p2 = l2;   //给两个链表做个备份。
+        ListNode* head;   //新建一个链表头指针。
+        if (p1->val < p2->val)  //比较当前链表头一个数大小
+        {
+            head = new ListNode(p1->val);   //从头开始新建一个小的元素
+            head->next = mergeTwoLists(p1->next , p2);  //下一个元素的决定由更新之后的链表递归作比较。
+        }
+        else
+        {
+            head = new ListNode(p2->val);   //同理
+            head->next = mergeTwoLists(p1 , p2->next);
+        }
+        return head;  //返回头指针之后的链表        
+    }
+};
+
