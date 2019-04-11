@@ -19,3 +19,23 @@ public:
     }
 };
 
+
+//全部遍历法，在leetcode会显示超出时间限制
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int len = height.size();    //数组长度
+        if (len < 2) return 0;
+        int area = 0; //面积大小
+        for (int i=0; i<len; i++)      
+            for (int j=i+1; j<len; j++)
+            {
+                    int temp = min(height[i],height[j]) * (j - i);  //计算面积，两个数最小的值乘以两个数的位置差
+                    area = max(area,temp);  //面积取遍历面积最大的一个
+
+            }
+        return area;  //返回最大面积值       
+    }
+};
+
+
