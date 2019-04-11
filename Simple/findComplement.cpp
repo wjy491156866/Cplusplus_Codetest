@@ -19,3 +19,24 @@ public:
 };
 //& 与：有0则0； | 或：有1则1；
 
+//方法二：计算二进制取反
+class Solution {
+public:
+    int findComplement(int num) {
+        vector<int> temp;
+        while(num>0)    //计算当前数字的二进制表示
+        {
+            temp.push_back(num%2);  //将除以2的余数加到vector的最后面
+            num /=2;    //取除以2之后的整数
+        }
+        int sum = 0,j=0;    
+        for(int i=0;i<temp.size();i++)
+        {
+            temp[i] = temp[i]>0?0:1;    //把0和1取反
+            sum = sum+temp[i]*pow(2,j); //二进制转十进制的式子
+            j++;    //幂次
+        }
+        return sum;
+    }
+};
+
