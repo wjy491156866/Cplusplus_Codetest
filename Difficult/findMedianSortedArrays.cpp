@@ -45,3 +45,26 @@ public:
         return 0.0;
     }
 };
+
+//方法二：暴力法
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int m = nums1.size(), n = nums2.size();
+        if(m==0 && n==0) return NULL;
+        vector<int> nums;
+        nums.insert(nums.end(),nums1.begin(),nums1.end());
+        nums.insert(nums.end(),nums2.begin(),nums2.end());
+        sort(nums.begin(),nums.end());
+        int len = nums.size();
+        double Med;
+        if (len%2 == 0)
+            Med = (nums[len/2-1]+nums[len/2])/2.0;
+        else
+            Med = nums[len/2];
+        return Med;
+    }
+};
+
+
+
