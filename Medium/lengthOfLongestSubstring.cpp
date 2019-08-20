@@ -28,18 +28,18 @@ public:
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        unordered_map<char,int> hash;
-        int res=0;
-        for(int i=0,j=0;i<s.length();i++){
-            if(++hash[s[i]]>1){
-                while(i>j){
-                    hash[s[j]]--;
-                    j++;
-                    if(hash[s[i]]==1)break;
+        unordered_map<char,int> hash;       //定义一个哈希表
+        int res=0;      //设置个数
+        for(int i=0,j=0;i<s.length();i++){      //设置上下边界
+            if(++hash[s[i]]>1){     //右边界i移动每次把s的值加入字典统计次数，当超过两次为重复，进入条件。否则跳出判断。
+                while(i>j){     //左边界小于右边界时进入条件
+                    hash[s[j]]--;       //左边界中哈希表中的的次数减一
+                    j++;        //左边界右移
+                    if(hash[s[i]]==1)break;     //当左边界移动到右边界所在位置时跳出，然后右边界开始右移
                 }
             }
-            res = max(res,i-j+1);
+            res = max(res,i-j+1);       //更新个数值
         }
-        return res;
+        return res;     //返回最大个数
     }
 };
