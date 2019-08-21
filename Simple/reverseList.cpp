@@ -14,7 +14,7 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode prev = NULL;       //新建空节点
+        ListNode *prev = NULL;       //新建空节点
         ListNode *curr = head;      //新建指针指向头节点
         while (curr != NULL)        //当当前节点不是NULL时
         {
