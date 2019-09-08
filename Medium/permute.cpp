@@ -5,7 +5,7 @@
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> res;
+        vector<vector<int>> res;        //二维容器
         helper(res,nums,0);   //递归函数从0位开始
         return res;
     }
