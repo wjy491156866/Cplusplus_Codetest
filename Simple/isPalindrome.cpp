@@ -24,3 +24,4 @@ public:
         return rev == temp;     //对比反转后的数和前期的比较
     }
 };
+
