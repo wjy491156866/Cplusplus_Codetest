@@ -20,3 +20,4 @@ public:
         return temp;    //返回标志位
     }
 };
+
