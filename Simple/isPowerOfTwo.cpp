@@ -11,7 +11,7 @@ public:
         while (true)
         {
             n = n/2;  //得到除以2之后的数
-            if(n%2 && n == 1) return true;
+            if(n%2 && n == 1) return true;      //0&&0=0，0&&1=0，1&&0=0，1&&1=1；
             if(n%2 && n != 1) return false;
         }
     }
