@@ -19,3 +19,5 @@ public:
         return num[n-1]; //找到第n阶的数              
     }
 };
+
+
