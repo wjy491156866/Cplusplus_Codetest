@@ -17,3 +17,4 @@ public:
         node->next = node->next->next;  //该节点的连接指向下下个节点
     }
 };
+
