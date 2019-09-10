@@ -19,3 +19,4 @@ public:
         return tmp == num;    //最后判断
     }
 };
+
