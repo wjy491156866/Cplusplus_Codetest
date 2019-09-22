@@ -17,6 +17,7 @@ public:
                     break;
                 }
             }
-        return vector<int>{f,l}; 
+        return vector<int>{f,l};        //下标输出
     }
 };
+
