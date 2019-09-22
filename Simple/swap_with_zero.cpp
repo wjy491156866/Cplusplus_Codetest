@@ -27,7 +27,7 @@ public:
                     max = array[j];
                 }
             }
-            swap_with_zero(array, len, max);
+            swap_with_zero(array, len, max);        //把最大数和0交换，最大数保持在最后
         }
     }
 };
