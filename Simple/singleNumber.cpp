@@ -16,3 +16,4 @@ public:
         return single;  //返回没有重复的数
     }
 };
+
